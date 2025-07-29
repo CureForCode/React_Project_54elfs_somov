@@ -1,0 +1,15 @@
+.characterCard {
+  width: 250px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  margin: 10px;
+}
+
+.avatarCharacter {
+  width: 100%;
+  border-radius: 8px;
+}
