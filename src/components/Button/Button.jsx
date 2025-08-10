@@ -1,17 +1,11 @@
 import "./styles.css";
 
-function Button({
-  buttonName = "Send",
-  onClick = () => {},
-  type = "button",
-  children,
-  color
-}) {
+function Button({ type = "button", name = "Send", onClick = () => {}, children }) {
   return (
-    <button className="button_component" onClick={onClick} type={type} style={{backgroundColor: color}}>
+    <button className="button_component" onClick={onClick} type={type}>
       {/* {children ? "" : buttonName} */}
       {/* Улосвный рендеринг */}
-      {!children && buttonName}
+      {!children && name}
       {children}
     </button>
   );

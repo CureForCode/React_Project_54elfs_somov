@@ -4,20 +4,12 @@
   justify-content: center;
   outline: none;
   border: none;
-  padding: 0 20px;
+  padding: 0;
   height: 70px;
-  min-width: 200px;
-  text-align: center;
-  background-color: rgb(30, 30, 255);
-  color: white;
+  width: 100%;
+  background-color: #1f27f5;
+  color: #ffffff;
   font-size: 20px;
   font-weight: bold;
-  border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.3 ease;
-  box-sizing: border-box;
-}
-
-.button_component:hover {
-  background-color: rgb(20, 20, 220);
 }

@@ -1,40 +1,53 @@
 import { useState } from "react";
+
 import Button from "../Button/Button";
 
 import "./styles.css";
 
 function Feedback() {
-  const [likes, setLikes] = useState(0);
-  const [dislikes, setDislikes] = useState(0);
+  const [like, setLike] = useState(0); // Если мы ничего не передаем в качестве аргумента функции useState(), то 1 элемент массива, который эта функция возвращает === undefined
+  const [dislike, setDislike] = useState(0);
 
   const onLike = () => {
-    setLikes((prevValue) => prevValue + 1);
+    setLike((prevValue) => {
+      console.log(prevValue);
+      return prevValue + 1;
+    });
+    setLike((prevValue) => {
+      console.log(prevValue);
+      return prevValue + 1;
+    });
+    setLike((prevValue) => {
+      console.log(prevValue);
+      return prevValue + 1;
+    });
   };
 
   const onDislike = () => {
-    setDislikes((prevValue) => prevValue + 1);
+    setDislike((prevValue) => prevValue + 1);
   };
 
-  const onReset = () => {
-    setLikes(0);
-    setDislikes(0);
+  const resetResults = () => {
+    setLike(0);
+    setDislike(0);
   };
 
   return (
-    <div className="feedback_wrapper">
-      <div className="feedback_section">
-        <Button buttonName="Like" onClick={onLike} color="#2ecc71" />
-        <p className="count">{likes}</p>
+    <div className="feedback-wrapper">
+      <div className="feedback-control">
+        <div className="buttonwithcount-container">
+          <Button name="Like" onClick={onLike} />
+          <p className="count">{like}</p>
+        </div>
+        <div className="buttonwithcount-container">
+          <Button name="Dislike" onClick={onDislike} />
+          <p className="count">{dislike}</p>
+        </div>
       </div>
-      <div className="feedback_section">
-        <Button buttonName="Dislike" onClick={onDislike} color="#e74c3c" />
-        <p className="count">{dislikes}</p>
-      </div>
-      <div className="reset_section">
-        <Button buttonName="Reset Results" onClick={onReset} color="#f39c12" />
-      </div>
+      <Button name="Reset Results" onClick={resetResults} />
     </div>
   );
 }
 
 export default Feedback;
+
